@@ -1,6 +1,6 @@
 Explanation of the Task
 
-The goal of this task is to create a **Retrieval-Augmented Generation (RAG) Pipeline** that enables interaction with semi-structured data stored in multiple PDF files. Here’s how the system works, simplified for easy understanding:
+The goal of this task is to create a **Retrieval-Augmented Generation (RAG) Pipeline. that enables interaction with semi-structured data stored in multiple PDF files. Here’s how the system works, simplified for easy understanding:
 
 
 
@@ -23,7 +23,7 @@ The system processes PDF files to:
 
 2. Key Functionalities
  A. Data Ingestion
-- What it Does**: Reads and processes PDF files.
+- What it Does: Reads and processes PDF files.
 
   - Uses `PyMuPDF` (`fitz`) to extract raw text.
   - Uses `pdfplumber` to extract structured tables.
@@ -35,20 +35,20 @@ The system processes PDF files to:
     It extracts: `{'Bachelor's': '4.2'}`.
 
 B. Chunking and Embedding
-- **What it Does**: Splits large text into smaller chunks and represents them as numerical vectors.
+- What it Does: Splits large text into smaller chunks and represents them as numerical vectors.
 - How:
   - Uses the `sentence-transformers` library to convert text chunks into embeddings.
   - Stores these embeddings in a `faiss` vector database for fast search.
 
 C. Query Handling
-- What it Does**: Answers user queries using similarity search and the LLM.
+- What it Does: Answers user queries using similarity search and the LLM.
 
   - Converts the user’s question into an embedding.
   - Searches the database for the most relevant text chunks.
   - Uses these chunks as context for the LLM to generate a complete answer.
 
 D. Specific Data Extraction
-- What it Does**: Extracts specific pieces of data like tables or key-value pairs.
+- What it Does: Extracts specific pieces of data like tables or key-value pairs.
 
   - Extracts tables from specific pages using `pdfplumber`.
   - Dynamically extracts unemployment data by processing text lines containing delimiters like `|`.
